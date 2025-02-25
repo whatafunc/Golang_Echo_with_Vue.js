@@ -144,7 +144,7 @@ go build -o app
 
 ```
 
-note the bash script required permisions are ``
+note the bash script required permisions are `chmod +x deploy.sh`
 
 ### CI/CD pipeline `.github/workflows/deploy.yml`
 
