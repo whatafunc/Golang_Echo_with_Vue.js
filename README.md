@@ -215,7 +215,14 @@ jobs:
 
 ### Other links to my Golang apps
 
-
+1. [Golang website app that uses templates via "html/template"](https://github.com/whatafunc/golang-wiki-website)
+2. [Golang used for Scrap data using Go Colly](https://github.com/whatafunc/colly-golang-webscrapper)
+3. [Go RESTful service with GoWeb framework](https://github.com/whatafunc/Go-RESTful-service-with-GoWeb)
+4.  ..
+5.  ..
+6. [study & understand php vs golang]( https://gist.github.com/whatafunc/5304f6affce05772d71c514c26f2b95c
+)
+7. ...
 
 ## License
 
