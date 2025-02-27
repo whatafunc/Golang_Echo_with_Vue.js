@@ -92,6 +92,16 @@ Build the Vue.js project to generate the `dist` directory:
 npm run build
 ```
 
+Clear the npm cache: Run the following command to clear the npm cache:
+```sh
+npm cache clean --force
+```
+
+Delete node_modules and package-lock.json: Delete the node_modules directory and the package-lock.json file to ensure a fresh installation of dependencies:
+```sh
+rm -rf node_modules package-lock.json
+```
+
 ### 8. Run the Golang Server
 
 Run the following command to initialize a new Go module in your project directory:
