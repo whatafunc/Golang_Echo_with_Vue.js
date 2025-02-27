@@ -7,6 +7,13 @@ import (
 	"github.com/labstack/echo/v4/middleware"
 )
 
+// Developer Signature struct
+type Developer struct {
+	Name  string `json:"name"`
+	Age   int    `json:"age"`
+	Email string `json:"email"`
+}
+
 func main() {
 	e := echo.New()
 
@@ -15,7 +22,7 @@ func main() {
 	e.Use(middleware.Recover()) // Recovers from panics
 
 	e.Use(middleware.CORSWithConfig(middleware.CORSConfig{
-		AllowOrigins: []string{"https://example1.com", "http://example2.com"}, // Allows only specific origins to fix CORS issue when we would be a part of the Microservice architecture app
+		AllowOrigins: []string{"http://localhost:8888", "https://example1.com", "http://example2.com"}, // Allows only specific origins to fix CORS issue when we would be a part of the Microservice architecture app
 		AllowMethods: []string{ /*http.MethodGet,*/ http.MethodPost, http.MethodPut, http.MethodDelete},
 	})) // Adds CORS headers to responses for the case when we are not calling APIs from the same origin as the server works
 
@@ -29,8 +36,20 @@ func main() {
 
 	// Define an API route for Hello World
 	e.GET("/api/hello", func(c echo.Context) error {
+		// Define the My Signature
+		me := Developer{
+			Name:  "Dmitriy",
+			Age:   43,
+			Email: "dimsim@popup.genius",
+		}
+
 		// Respond with a JSON object
-		return c.JSON(http.StatusOK, map[string]string{"message": "Hello, World!"})
+		return c.JSON(http.StatusOK, map[string]interface{}{
+			"message":  "Hello, World!",
+			"signedby": me,
+		})
+		// Respond with a JSON object
+		//return c.JSON(http.StatusOK, map[string]string{"message": "Hello, World!"})
 	})
 
 	// Define an API route for Hello World
