@@ -1,6 +1,7 @@
 # Vue.js and Golang Monolithic Application
 
-This is a monolithic application that combines a Vue.js frontend with a Golang backend using the Echo framework. The frontend uses Vuetify for Material Design components.
+This is a monolithic application that combines a Vue.js frontend with a Golang backend using the Echo framework. 
+The frontend uses 3 templates but user can just check /api/* as well
 
 ## Project Structure
 
@@ -14,7 +15,11 @@ vue-project/
 │   ├── App.vue
 │   ├── main.js
 │   ├── plugins/
-│   │   └── vuetify.js
+│   │   └── ..
+│   ├── views/
+│   │    ├── Home.vue
+│   │    ├── Health.vue
+│   │    └── NotFound.vue
 │   ├── router/
 │   │   └── index.js
 │   ├── store/
@@ -76,12 +81,12 @@ Navigate to the project's root directory and install the dependencies:
 npm install
 ```
 
-### 6. Install `@mdi/font` and `sass-loader@10`
+### 6. Install `@mdi/font` and `sass-loader@10` < deprecated
 
 Install the required packages:
 
 ```sh
-npm install @mdi/font sass-loader@10 sass --save
+#npm install @mdi/font sass-loader@10 sass --save
 ```
 
 ### 7. Build the Vue.js Project

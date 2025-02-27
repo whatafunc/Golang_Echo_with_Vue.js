@@ -11,8 +11,13 @@ func main() {
 	e := echo.New()
 
 	// Middleware
-	e.Use(middleware.Logger())
-	e.Use(middleware.Recover())
+	e.Use(middleware.Logger())  // Logs each request
+	e.Use(middleware.Recover()) // Recovers from panics
+
+	e.Use(middleware.CORSWithConfig(middleware.CORSConfig{
+		AllowOrigins: []string{"https://example1.com", "http://example2.com"}, // Allows only specific origins to fix CORS issue when we would be a part of the Microservice architecture app
+		AllowMethods: []string{ /*http.MethodGet,*/ http.MethodPost, http.MethodPut, http.MethodDelete},
+	})) // Adds CORS headers to responses for the case when we are not calling APIs from the same origin as the server works
 
 	// Serve static files from the dist directory
 	e.Static("/", "dist")
