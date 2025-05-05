@@ -40,7 +40,7 @@ func main() {
 		me := Developer{
 			Name:  "Dmitriy",
 			Age:   43,
-			Email: "dimsim@popup.genius",
+			Email: "golang@localhost",
 		}
 
 		// Respond with a JSON object
